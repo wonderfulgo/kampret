@@ -10,7 +10,7 @@ fi
 red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
-MYIP=$(wget -qO- Ipinfo.io/ip);
+MYIP=$(wget -qO- https://Icanhazip.com);
 IZIN=$( curl https://raw.githubusercontent.com/wonderfulgo/k/tokengasken/main/pertamax | grep $MYIP )
 if [ $MYIP = $IZIN ]; then
 echo -e "${green}Permission Accepted...${NC}"
