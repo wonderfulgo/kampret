@@ -19,7 +19,7 @@ echo -e "${red}Permission Denied!${NC}";
 echo "Please Contact Admin"
 echo "Telegram t.me/SweetieSSH"
 echo "WhatsApp wa.me/6282299173321"
-rm -f setup.wget -qO- Ipinfo.io/ip
+rm -f setup.sh
 exit 0
 fi
 if [ -f "/etc/v2ray/domain" ]; then
