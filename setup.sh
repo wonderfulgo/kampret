@@ -10,15 +10,7 @@ fi
 red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
-MYIP=$(wget -qO- https://Icanhazip.com);
-IZIN=$( curl https://raw.githubusercontent.com/wonderfulgo/k/tokengasken/main/pertamax | grep $MYIP )
-if [ $MYIP = $IZIN ]; then
-echo -e "${green}Permission Accepted...${NC}"
-else
-echo -e "${red}Permission Denied!${NC}";
-echo "Please Contact Admin"
-echo "Telegram t.me/SweetieSSH"
-echo "WhatsApp wa.me/6282299173321"
+
 rm -f setup.sh
 exit 0
 fi
