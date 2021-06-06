@@ -11,7 +11,6 @@ red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
 
-rm -f setup.sh
 exit 0
 fi
 if [ -f "/etc/v2ray/domain" ]; then
