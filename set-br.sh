@@ -24,7 +24,7 @@ port           587
 host           smtp.gmail.com
 from           Successfull Backup VPS
 user           kudasapi57@gmail.com 
-password       vxcobtuonyuokrsl
+password       mmgrwcbjbrcgaxct
 account default : SweetieSSH
 END
 chown -R www-data:www-data /etc/msmtprc
