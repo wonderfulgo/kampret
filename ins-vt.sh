@@ -19,11 +19,17 @@ touch /etc/trojan/akun.conf
 wget https://raw.githubusercontent.com/wonderfulgo/kampret/main/go.sh && chmod +x go.sh && ./go.sh
 rm -f /root/go.sh
 bash -c "$(wget -O- https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)"
-mkdir /root/.acme.sh
-curl https://acme-install.netlify.app/acme.sh -o /root/.acme.sh/acme.sh
+
+cd /root
+git clone https://github.com/acmesh-official/acme.sh.git
+cd ./acme.sh
+./acme.sh --install -m joniada57@gmail.com
 chmod +x /root/.acme.sh/acme.sh
+cd /root
+/root/.acme.sh/acme.sh --set-default-ca  --server  letsencrypt
 /root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256
-~/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /etc/v2ray/v2ray.crt --keypath /etc/v2ray/v2ray.key --ecc
+/root/.acme.sh/acme.sh  --installcert -d $domain --fullchainpath /etc/v2ray/v2ray.crt --keypath /etc/v2ray/v2ray.key --ecc
+cat /etc/sweet/tls/$domain.log
 service squid start
 uuid=$(cat /proc/sys/kernel/random/uuid)
 cat> /etc/v2ray/config.json << END
@@ -58,7 +64,7 @@ cat> /etc/v2ray/config.json << END
           ]
         },
         "wsSettings": {
-          "path": "/v2ray",
+          "path": "/sweet",
           "headers": {
             "Host": ""
           }
@@ -132,7 +138,7 @@ cat> /etc/v2ray/none.json << END
   },
   "inbounds": [
     {
-      "port": 8880,
+      "port": 80,
       "protocol": "vmess",
       "settings": {
         "clients": [
@@ -146,7 +152,7 @@ cat> /etc/v2ray/none.json << END
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-          "path": "/v2ray",
+          "path": "/sweet",
           "headers": {
             "Host": ""
           }
@@ -316,7 +322,7 @@ cat> /etc/v2ray/vnone.json << END
   },
   "inbounds": [
     {
-      "port": 88,
+      "port": 8880,
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -467,12 +473,12 @@ $uuid
 EOF
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2087 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 88 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2083 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 8880 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2087 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 443 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 88 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 80 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2083 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 8880 -j ACCEPT
 iptables-save > /etc/iptables.up.rules
@@ -520,4 +526,3 @@ chmod +x certv2ray
 cd
 rm -f ins-vt.sh
 mv /root/domain /etc/v2ray
-
