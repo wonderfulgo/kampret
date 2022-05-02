@@ -13,9 +13,9 @@ echo "Only For Premium Users"
 exit 0
 fi
 apt install jq curl -y
-DOMAIN=vpsku.xyz
+DOMAIN=vpsme.my.id
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c4)
-SUB_DOMAIN=${sub}.vpsku.xyz
+SUB_DOMAIN=${sub}.vpsme.my.id
 CF_ID=joniada57@gmail.com
 CF_KEY=05258bf4abf6bef652e5bd71624e8340af1b5
 set -euo pipefail
