@@ -17,8 +17,8 @@ echo start
 sleep 0.5
 source /var/lib/premium-script/ipvps.conf
 domain=$IP
-systemctl stop v2ray
-systemctl stop v2ray@none
+systemctl stop xray
+systemctl stop xray@none
 cd /root
 git clone https://github.com/acmesh-official/acme.sh.git
 cd ./acme.sh
@@ -28,8 +28,8 @@ cd /root
 /root/.acme.sh/acme.sh --set-default-ca  --server  letsencrypt
 /root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256
 /root/.acme.sh/acme.sh  --installcert -d $domain --fullchainpath /etc/v2ray/v2ray.crt --keypath /etc/v2ray/v2ray.key --ecc
-systemctl start v2ray@none
-systemctl start v2ray
+systemctl start xray@none
+systemctl start xray
 echo Done
 sleep 0.5
 clear 
