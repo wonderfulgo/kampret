@@ -28,6 +28,13 @@ password       bohsindcvrtnxhqk
 account default : SweetieSSH
 END
 chown -R www-data:www-data /etc/msmtprc
+
+rm -f /usr/bin/autobackup
+rm -f /usr/bin/backup
+rm -f /usr/bin/bckp
+rm -f /usr/bin/strt
+rm -f /usr/bin/restore
+rm -f /usr/bin/limit-speed
 cd /usr/bin
 wget -O autobackup "https://raw.githubusercontent.com/wonderfulgo/kampret/main/autobackup.sh"
 wget -O backup "https://raw.githubusercontent.com/wonderfulgo/kampret/main/backup.sh"
@@ -43,4 +50,3 @@ chmod +x strt
 chmod +x limit-speed
 cd
 rm -f /root/set-br.sh
-
