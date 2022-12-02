@@ -31,6 +31,7 @@ cp /etc/ipsec.d/passwd backup/passwd1
 cp -r /var/lib/premium-script/ backup/premium-script
 #cp -r /home/sstp backup/sstp
 cp -r /etc/v2ray backup/v2ray
+cp -r /etc/sweet backup/sweet
 #cp -r /etc/trojan backup/trojan
 #cp -r /usr/local/shadowsocksr/ backup/shadowsocksr
 cp /etc/crontab backup/crontab
