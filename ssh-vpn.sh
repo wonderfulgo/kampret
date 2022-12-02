@@ -243,36 +243,9 @@ netfilter-persistent reload
 # download script
 cd /usr/bin
 wget -O add-host "https://raw.githubusercontent.com/wonderfulgo/kampret/main/add-host.sh"
-wget -O add-hostcus "https://raw.githubusercontent.com/wonderfulgo/kampret/main/add-hostcus.sh"
-wget -O about "https://raw.githubusercontent.com/wonderfulgo/kampret/main/about.sh"
-wget -O menu "https://raw.githubusercontent.com/wonderfulgo/kampret/main/menu.sh"
-wget -O usernew "https://raw.githubusercontent.com/wonderfulgo/kampret/main/usernew.sh"
-wget -O trial "https://raw.githubusercontent.com/wonderfulgo/kampret/main/trial.sh"
-wget -O hapus "https://raw.githubusercontent.com/wonderfulgo/kampret/main/hapus.sh"
-wget -O member "https://raw.githubusercontent.com/wonderfulgo/kampret/main/member.sh"
-wget -O delete "https://raw.githubusercontent.com/wonderfulgo/kampret/main/delete.sh"
-wget -O cek "https://raw.githubusercontent.com/wonderfulgo/kampret/main/cek.sh"
 wget -O restart "https://raw.githubusercontent.com/wonderfulgo/kampret/main/restart.sh"
-wget -O speedtest "https://raw.githubusercontent.com/wonderfulgo/kampret/main/speedtest_cli.py"
-wget -O info "https://raw.githubusercontent.com/wonderfulgo/kampret/main/info.sh"
-wget -O ram "https://raw.githubusercontent.com/wonderfulgo/kampret/main/ram.sh"
-wget -O renew "https://raw.githubusercontent.com/wonderfulgo/kampret/main/renew.sh"
-wget -O autokill "https://raw.githubusercontent.com/wonderfulgo/kampret/main/autokill.sh"
-wget -O ceklim "https://raw.githubusercontent.com/wonderfulgo/kampret/main/ceklim.sh"
-wget -O tendang "https://raw.githubusercontent.com/wonderfulgo/kampret/main/tendang.sh"
 wget -O clear-log "https://raw.githubusercontent.com/wonderfulgo/kampret/main/clear-log.sh"
-wget -O change-port "https://raw.githubusercontent.com/wonderfulgo/kampret/main/change.sh"
-wget -O port-ovpn "https://raw.githubusercontent.com/wonderfulgo/kampret/main/port-ovpn.sh"
-wget -O port-ssl "https://raw.githubusercontent.com/wonderfulgo/kampret/main/port-ssl.sh"
-wget -O port-wg "https://raw.githubusercontent.com/wonderfulgo/kampret/main/port-wg.sh"
-wget -O port-tr "https://raw.githubusercontent.com/wonderfulgo/kampret/main/port-tr.sh"
-wget -O port-sstp "https://raw.githubusercontent.com/wonderfulgo/kampret/main/port-sstp.sh"
-wget -O port-squid "https://raw.githubusercontent.com/wonderfulgo/kampret/main/port-squid.sh"
-wget -O port-ws "https://raw.githubusercontent.com/wonderfulgo/kampret/main/port-ws.sh"
-wget -O port-vless "https://raw.githubusercontent.com/wonderfulgo/kampret/main/port-vless.sh"
-wget -O wbmn "https://raw.githubusercontent.com/wonderfulgo/kampret/main/webmin.sh"
-wget -O xp "https://raw.githubusercontent.com/wonderfulgo/kampret/main/xp.sh"
-wget -O update "https://raw.githubusercontent.com/wonderfulgo/kampret/main/update.sh"
+
 chmod +x add-host
 chmod +x add-hostcus
 chmod +x menu
