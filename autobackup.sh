@@ -32,7 +32,7 @@ EOF
 fi
 cat << EOF >> /etc/crontab
 # BEGIN_Backup
-5 0 * * * root bckp
+*/120 * * * * root bckp
 # END_Backup
 EOF
 service cron restart
@@ -47,7 +47,7 @@ function stop() {
 email=$(cat /home/email)
 sed -i "/^$email/d" /home/email
 sed -i "/^# BEGIN_Backup/,/^# END_Backup/d" /etc/crontab
-service cron restart
+systemctl restart cron
 sleep 1
 echo " Please Wait"
 clear
