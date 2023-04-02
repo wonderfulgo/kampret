@@ -35,7 +35,7 @@ cp -r /var/lib/premium-script/ backup/premium-script
 #cp -r /home/sstp backup/sstp
 cp -r /etc/v2ray backup/v2ray
 cp -r /etc/nginx backup/nginx
-cp -r /etc/sweet backup/sweet
+cp -r /etc/sweet/config backup/sweet
 #cp -r /etc/trojan backup/trojan
 #cp -r /usr/local/shadowsocksr/ backup/shadowsocksr
 cp -r /home/vps/public_html backup/public_html
